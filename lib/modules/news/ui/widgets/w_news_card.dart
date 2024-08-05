@@ -6,7 +6,6 @@ import 'package:news_z/modules/news/ui/widgets/w_custom_text.dart';
 import 'package:news_z/modules/news/ui/widgets/w_news_card_image.dart';
 import 'package:news_z/theme/theme_colors.dart';
 
-
 class NewsCard extends StatelessWidget {
   final News news;
 
@@ -22,7 +21,7 @@ class NewsCard extends StatelessWidget {
         Navigator.pushNamed(context, '/detalle', arguments: news);
       },
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 5.0),
+        padding: const EdgeInsets.symmetric(horizontal: 8.0),
         child: SizedBox(
           width: 350.0,
           child: Card(
@@ -40,9 +39,10 @@ class NewsCard extends StatelessWidget {
                 top: 15.0,
                 left: 15.0,
                 right: 15.0,
+               
               ),
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   NewsCardImage(
                     news: news,
@@ -59,20 +59,15 @@ class NewsCard extends StatelessWidget {
                     padding: const EdgeInsets.only(
                       left: 5.0,
                       right: 5.0,
-                      bottom: 10.0,
+                      //bottom: 10.0,
                     ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: <Widget>[
-                        CustomText(
-                          text: DateFormat(
-                            'MMMM d, HH:mm',
-                          ).format(
-                            news.fecha,
-                            //color: ThemeColors.tertiary.withOpacity(0.4),
-                          ),
-                        ),
-                      ],
+                    child: CustomText(
+                      text: DateFormat(
+                        'MMMM d, HH:mm',
+                      ).format(
+                        news.fecha,
+                        //color: ThemeColors.tertiary.withOpacity(0.4),
+                      ),
                     ),
                   ),
                 ],
