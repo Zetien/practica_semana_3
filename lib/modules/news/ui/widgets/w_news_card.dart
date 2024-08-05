@@ -21,10 +21,11 @@ class NewsCard extends StatelessWidget {
         Navigator.pushNamed(context, '/detalle', arguments: news);
       },
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 8.0),
+        padding: const EdgeInsets.symmetric(horizontal: 9.0),
         child: SizedBox(
-          width: 350.0,
+          //width: 300.0,
           child: Card(
+            elevation: 4,
             surfaceTintColor: ThemeColors.white,
             color: ThemeColors.white,
             shape: RoundedRectangleBorder(
@@ -35,12 +36,7 @@ class NewsCard extends StatelessWidget {
             ),
             clipBehavior: Clip.antiAlias,
             child: Padding(
-              padding: const EdgeInsets.only(
-                top: 15.0,
-                left: 15.0,
-                right: 15.0,
-               
-              ),
+              padding: const EdgeInsets.all(15),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
